@@ -1,0 +1,139 @@
+.container {
+  height: 90vh;
+  width: 100%;
+  padding: 20px;
+}
+
+.container .brand-container span,
+h3 {
+  font-size: 2rem;
+}
+.container .brand-container .brand-container-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .brand-container button {
+  outline: none;
+  background: #000000;
+  color: #fff;
+  width: 200px;
+  border: none;
+  height: 50px;
+  cursor: pointer;
+}
+
+.container .brand-container span,
+.container .brand-container h3,
+.container .brand-container button {
+  margin-bottom: 10px;
+}
+
+.container .description-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.container .description-container span {
+  font-size: 1.5rem;
+}
+
+.container .description-container hr {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+
+.container .description-container p {
+  color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+.container .services-container {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 500px) {
+  .container {
+    padding: 20px 0px 20px 0px;
+  }
+  .container .description-container p {
+    padding: 0px 20px;
+  }
+}
+@media (min-width: 1000px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .container .services-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .container .description-container,
+  .container .brand-container,
+  .container .services-container {
+    margin-bottom: 60px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    position: relative;
+  }
+  .brand-container {
+    position: absolute;
+    top: 60px;
+    left: 100px;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+  }
+  .brand-container .brand-container-content span,
+  h3 {
+    margin: 0;
+    font-size: 4rem;
+  }
+  .brand-container .brand-container-content h3 {
+    margin-bottom: 40px;
+  }
+  .brand-container .brand-container-content button {
+    width: 140px;
+  }
+
+  .aside-container {
+    position: absolute;
+    right: 60px;
+    bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .aside-container .description-container {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: flex-end;
+    width: 350px;
+  }
+  .aside-container .description-container span {
+    font-size: 4rem;
+  }
+}

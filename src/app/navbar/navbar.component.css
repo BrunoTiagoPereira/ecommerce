@@ -1,0 +1,69 @@
+label,
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a.active {
+  color: white !important;
+  transform: scale(1.5);
+  transition: all 0.2s;
+}
+
+.menu-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-top: 15px;
+  padding-right: 20px;
+}
+
+.menu-btn {
+  display: none;
+}
+
+.navbar-container {
+  background: #000000;
+  color: white;
+  position: relative;
+  height: 50px;
+}
+
+.navbar-container .logo-container {
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 1.5rem;
+}
+
+.navbar-container ul.menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 0px;
+  visibility: hidden;
+}
+
+.navbar-container ul a {
+  display: block;
+  color: rgb(200, 200, 200);
+  margin-bottom: 60px;
+  font-size: 30px;
+}
+
+.navbar-container input {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#menu-btn:checked ~ ul {
+  height: 100vh;
+  width: 100vw;
+  margin-top: 0px;
+  z-index: 2;
+  transition: height 0.2s ease-in-out;
+  background: rgba(0, 0, 0, 0.8);
+  visibility: visible;
+}

@@ -1,0 +1,21 @@
+<header class="header">
+
+  
+    <nav class="navbar-container">
+        <div class="logo-container">
+            <a href="" class="logo">Event</a>
+        </div>
+
+        
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <ul class="menu">
+            <a routerLink="/gallery" routerLinkActive="active">Gallery</a>
+            <a routerLink="/cart" routerLinkActive="active">
+                <fa-icon [icon]="CartIcon"></fa-icon>
+            </a>
+        </ul>
+        <label class="menu-icon" for="menu-btn">
+            <fa-icon [icon]="BarsIcon"></fa-icon>
+        </label>
+    </nav>
+</header>
