@@ -1,0 +1,13 @@
+<app-shopping-navbar (onQueryTextChange)="updateProducts($event)"></app-shopping-navbar>
+
+<div class="shopping-container">
+    <div class="aside-bar-container">
+        <app-market-aside-bar (onLinkClick)="selectedCategory=$event"></app-market-aside-bar>
+    </div>
+    <div class="products-container">
+        <ng-template ngFor let-product [ngForOf]="products">
+            <app-product [product]=product></app-product>
+        </ng-template>
+    </div>
+
+</div>

@@ -7,15 +7,16 @@ a {
 a.active {
   color: white !important;
   transform: scale(1.5);
-  transition: all 0.2s;
 }
 
 .menu-icon {
   position: absolute;
   top: 0;
   right: 0;
-  padding-top: 15px;
+  padding-top: 12px;
   padding-right: 20px;
+  z-index: 3;
+  font-size: 20px;
 }
 
 .menu-btn {
@@ -35,21 +36,26 @@ a.active {
   font-size: 1.5rem;
 }
 
-.navbar-container ul.menu {
+.navbar-container .navbar-links ul.menu {
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 0px;
-  visibility: hidden;
+  visibility: collapse;
 }
 
-.navbar-container ul a {
+.navbar-container .navbar-links ul a {
   display: block;
   color: rgb(200, 200, 200);
   margin-bottom: 60px;
   font-size: 30px;
+  transition: transform 0.2s;
+}
+
+.navbar-container .navbar-links ul a:hover {
+  transform: scale(1.2);
 }
 
 .navbar-container input {
@@ -58,12 +64,68 @@ a.active {
   top: 0;
 }
 
-#menu-btn:checked ~ ul {
+#menu-btn:checked ~ .navbar-links ul {
   height: 100vh;
-  width: 100vw;
-  margin-top: 0px;
+  width: 100%;
+  top: 0;
   z-index: 2;
   transition: height 0.2s ease-in-out;
   background: rgba(0, 0, 0, 0.8);
   visibility: visible;
+  position: absolute;
+}
+
+@media (min-width: 800px) {
+  .navbar-container .navbar-links ul a:hover {
+    transform: none;
+  }
+
+  a.active {
+    color: white !important;
+    transform: none;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .navbar-container {
+    background: #000000;
+    color: white;
+    position: relative;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5rem;
+  }
+
+  .navbar-container .logo-container {
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+  .navbar-container .navbar-links {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    margin-right: 30px;
+  }
+
+  .navbar-container .navbar-links ul.menu {
+    visibility: visible;
+    position: initial;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+  }
+
+  .navbar-container .navbar-links ul a {
+    color: rgb(200, 200, 200);
+    margin: 0px;
+    font-size: 1.3rem;
+    transition: all 0.2s;
+  }
 }

@@ -9,6 +9,12 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { CartComponent } from './cart/cart.component';
+import { ShoppingComponent } from './shopping/shopping.component';
+import { ShoppingNavbarComponent } from './shopping-navbar/shopping-navbar.component';
+import { MarketAsideBarComponent } from './CustomComponents/market-aside-bar/market-aside-bar.component';
+import { ProductComponent } from './CustomComponents/product/product.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { DatabaseService } from './Services/database.service';
 
 
 
@@ -19,7 +25,12 @@ import { CartComponent } from './cart/cart.component';
     ServicesBlocksComponent,
     GalleryComponent,
     NavbarComponent,
-    CartComponent
+    CartComponent,
+    ShoppingComponent,
+    ShoppingNavbarComponent,
+    MarketAsideBarComponent,
+    ProductComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +40,7 @@ import { CartComponent } from './cart/cart.component';
     
     
   ],
-  providers: [],
+  providers: [DatabaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

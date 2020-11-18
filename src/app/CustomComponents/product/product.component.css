@@ -1,0 +1,17 @@
+.product-container {
+  width: 220px;
+  height: 130px;
+  background: rgba(200, 246, 255, 0.3);
+  position: relative;
+}
+
+.product-container .product-content {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+}
+
+a.product-link {
+  text-decoration: none;
+  color: black;
+}

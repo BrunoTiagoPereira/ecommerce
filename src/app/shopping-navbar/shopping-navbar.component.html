@@ -1,0 +1,29 @@
+<div class="market-container">
+    <div class="market-container-brand">
+        <h2>Digital Market</h2>
+        <a routerLink="/cart" routerLinkActive="active">
+            <fa-icon [icon]="CartIcon"></fa-icon>
+        </a>
+    </div>
+    <form id="filters" class="form-area">
+        <div class="search-area">
+        
+            <input (input)="searchProducts($event.target.value)" name="query" id="search-input" type="text" placeholder="Product Name">
+            <fa-icon class="search-icon" [icon]="SearchIcon"></fa-icon>
+        </div>
+        
+        <select (change)="searchCategory($event.target.value)" id="categories-select" name="category">
+            <option value="all">
+                All Categories
+            </option>
+            <option *ngFor="let category of categories" value={{category.description}}>
+                {{category.description}}
+            </option>
+        </select>
+    </form>
+
+
+    
+  
+    
+</div>

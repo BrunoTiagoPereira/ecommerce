@@ -1,0 +1,12 @@
+<ul class="category-items">
+    <li>
+        <a routerLinkActive="active" [routerLink]="'/shopping/all'" >
+         All
+        </a>
+    </li>
+    <li (click)="FilterCategory(category.description)" *ngFor="let category of categories">
+        <a routerLinkActive="active"  [routerLink]="['/shopping',category.description]">
+            {{category.description}}
+        </a>
+    </li>
+</ul>
