@@ -10,10 +10,13 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
 })
+
 export class ProductDetailComponent implements OnInit {
 
 
   selectedProduct:ProductsProps;
+
+  selectedImageId:number;
 
   
 
@@ -26,18 +29,31 @@ export class ProductDetailComponent implements OnInit {
        this.database.
        getProducts()
        .find(product=>product.id===parseInt(params.get('id')));
+      this.selectedImageId=1;
+
     })
+  }
 
 
+  //true=foward|false=back 
+  onImageChange(side: boolean){
 
+     console.log(side);
+     console.log(this.selectedProduct.images.length);
+     console.log(this.selectedProduct.images.length-1>this.selectedImageId+1);
+    if(side&&this.selectedProduct.images.length-1>this.selectedImageId+1){
+      this.selectedImageId+=1;
 
-
-
+    }
+    else if(!side&&this.selectedImageId>0){
+      this.selectedImageId-=1;
+      
+      
+    }
   }
 
   addItemToCart(){
-     let product:ProductsProps = { id:1, category:"Shoes", description:"Description", title:"Product1"};
-     this.database.addItemsToCart(product);
+
   }
 
 }

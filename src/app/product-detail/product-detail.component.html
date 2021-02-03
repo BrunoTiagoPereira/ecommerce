@@ -1,1 +1,23 @@
-{{selectedProduct.title}}
+<div class="product-detail-container">
+    <div class="product-detail-content">
+        <img src="{{selectedProduct.images[selectedImageId]}}" alt="">
+        <div class="choose-image-container">
+            <div class="choose-image-buttons">
+                <label (click)="onImageChange(false)">
+                    <
+                </label>   
+                
+            </div>
+            <div class="choose-image-buttons">
+                <label (click)="onImageChange(true)">
+                    >
+                </label>
+            </div>
+        </div>
+
+       
+    </div>
+    
+</div>
+
+

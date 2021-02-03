@@ -2,14 +2,16 @@ import { Injectable } from '@angular/core';
 import {ProductsProps,CategoriesProps} from '../../interfaces/interfaces';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class DatabaseService {
 
    cart: ProductsProps[] = [];
+    imageTemplate:string = "../../assets/productTemplate.svg";
   constructor() { 
-
+  
    
   }
 
@@ -20,15 +22,33 @@ export class DatabaseService {
 
   getProducts() : ProductsProps[]{
       let products:ProductsProps[] = [
-      { id:1, category:"Shoes", description:"Description", title:"Product1"},
-      { id:2, category:"Jackets", description:"Description", title:"Product2"},
-      { id:3, category:"Jackets", description:"Description", title:"Product3"},
-      { id:4, category:"Jackets", description:"Description", title:"Product4"},
-      { id:5, category:"Jackets", description:"Description", title:"Product5"},
-      { id:6, category:"Shoes", description:"Description", title:"Product6"},
-      { id:7, category:"Shoes", description:"Description", title:"Product7"},
-      { id:8, category:"Shoes", description:"Description", title:"Product8"},
-      { id:9, category:"Shoes", description:"Description", title:"Product9"},
+      { id:1, category:"Shoes", description:"Description", title:"Product1", images:[
+        this.imageTemplate
+      ]},
+      { id:2, category:"Jackets", description:"Description", title:"Product2", images:[
+        "",this.imageTemplate,this.imageTemplate, 
+      ]},
+      { id:3, category:"Jackets", description:"Description", title:"Product3", images:[
+        this.imageTemplate
+      ]},
+      { id:4, category:"Jackets", description:"Description", title:"Product4", images:[
+        this.imageTemplate
+      ]},
+      { id:5, category:"Jackets", description:"Description", title:"Product5", images:[
+        this.imageTemplate
+      ]},
+      { id:6, category:"Shoes", description:"Description", title:"Product6", images:[
+        this.imageTemplate
+      ]},
+      { id:7, category:"Shoes", description:"Description", title:"Product7", images:[
+        this.imageTemplate
+      ]},
+      { id:8, category:"Shoes", description:"Description", title:"Product8", images:[
+        this.imageTemplate
+      ]},
+      { id:9, category:"Shoes", description:"Description", title:"Product9", images:[
+        this.imageTemplate
+      ]},
 
     ];
     return products;
