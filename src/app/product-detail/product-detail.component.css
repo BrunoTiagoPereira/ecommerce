@@ -40,6 +40,14 @@ img {
   background-color: #000000;
   color: white;
   font-size: 0.7rem;
+  transition: all 0.1s;
+  cursor: pointer;
+}
+.product-detail-container
+  .product-detail-content
+  .choose-image-container
+  .choose-image-buttons:hover {
+  background-color: rgba(0, 0, 0, 70%);
 }
 
 .product-description-container {
@@ -63,9 +71,10 @@ img {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  font-size: 1.5rem;
 }
 .product-description-container .price-container span {
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   text-decoration: line-through;
   color: #c3dee4;
 }
@@ -75,12 +84,26 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: rgba(0, 0, 0, 50%);
+  line-height: 1.8rem;
+  text-justify: distribute-all-lines;
 }
 
 .product-description-container .size-container {
   display: flex;
   gap: 10px;
   align-items: center;
+  color: rgba(0, 0, 0, 55%);
+}
+
+.product-description-container .size-container select {
+  outline: 0;
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+  width: 120px;
 }
 .product-description-container button {
   outline: 0;
@@ -90,4 +113,74 @@ img {
   background-color: #000000;
   color: white;
   font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.product-description-container button:hover {
+  background-color: rgba(0, 0, 0, 70%);
+}
+
+@media (min-width: 1300px) {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+  }
+
+  img {
+    width: 100%;
+    max-width: 400px;
+    max-height: 500px;
+  }
+  .product-detail-container {
+    position: initial;
+    flex-direction: row;
+    align-items: baseline;
+
+    margin-left: 120px;
+  }
+  .product-detail-container .product-detail-content .choose-image-container {
+    position: initial;
+    gap: 10px;
+    align-self: flex-end;
+    margin-bottom: 40px;
+  }
+  .product-detail-container
+    .product-detail-content
+    .choose-image-container
+    .choose-image-buttons {
+    width: 60px;
+    height: 40px;
+
+    font-size: 1.3rem;
+  }
+  .product-description-container {
+    width: 100%;
+  }
+  .product-description-container,
+  .product-description-container .title-container,
+  .product-description-container .price-container,
+  .product-description-container p {
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .product-description-container p {
+    padding-right: 300px;
+  }
+
+  .product-description-container .price-container span {
+    font-size: 0.8rem;
+    text-decoration: line-through;
+    color: #c3dee4;
+  }
+
+  .product-description-container .size-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 1.2rem;
+  }
 }

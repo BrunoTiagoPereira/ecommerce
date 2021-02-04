@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from '../Services/database.service';
 import { ProductsProps } from "../../interfaces/interfaces";
 import { ActivatedRoute, Router } from '@angular/router';
-
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons'
+import {faArrowRight} from '@fortawesome/free-solid-svg-icons'
 
 
 @Component({
@@ -18,7 +19,10 @@ export class ProductDetailComponent implements OnInit {
 
   selectedImageId:number;
 
-  
+  selectedSize:string;
+
+  arrowLeft= faArrowLeft;
+  arrowRight= faArrowRight;
 
   constructor(private database:DatabaseService, private activatedRoute:ActivatedRoute) { }
 
@@ -30,6 +34,7 @@ export class ProductDetailComponent implements OnInit {
        getProducts()
        .find(product=>product.id===parseInt(params.get('id')));
       this.selectedImageId=0;
+      this.selectedSize=this.selectedProduct.avaiableSizes[0];
 
     })
   }
@@ -49,7 +54,9 @@ export class ProductDetailComponent implements OnInit {
   }
 
   addItemToCart(){
-
+  
+    this.selectedProduct.selectedSize=this.selectedSize;
+    this.database.addItemsToCart(this.selectedProduct);
   }
 
 }

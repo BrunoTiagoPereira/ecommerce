@@ -4,7 +4,8 @@ export interface ProductsProps{
     category:string,
     title:string,
     images:Array<string>,
-    avaiableSizes:Array<string>
+    avaiableSizes:Array<string>,
+    selectedSize:string
 }
 
 export interface CategoriesProps{

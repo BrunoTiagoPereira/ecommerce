@@ -1,56 +1,63 @@
 <app-navbar></app-navbar>
 
-<div class="product-detail-container">
-    <div *ngIf="selectedProduct.images.length>0; else elseBlock" class="product-detail-content">
-        <img src="{{selectedProduct.images[selectedImageId]}}" alt="">
-        <div class="choose-image-container">
-            <div class="choose-image-buttons">
-                <label (click)="onImageChange(false)">
-                    < 
-              </label>
+
+<div class="container">
+    <div class="product-detail-container">
+        <div *ngIf="selectedProduct.images.length>0; else elseBlock" class="product-detail-content">
+            <div class="choose-image-container">
+                <div class="choose-image-buttons">
+                    <label (click)="onImageChange(false)">
+                      <fa-icon [icon]="arrowLeft"></fa-icon>
+                  </label>
+                </div>
+                <div class="choose-image-buttons">
+                    <label (click)="onImageChange(true)">
+                        <fa-icon [icon]="arrowRight"></fa-icon>
+                    </label>
+                </div>
+            
             </div>
-            <div class="choose-image-buttons">
-                <label (click)="onImageChange(true)">
-                    >
-                </label>
-            </div>
-        
+            
+            <img src="{{selectedProduct.images[selectedImageId]}}" alt="">
+           
+
         </div>
-       
+        <ng-template #elseBlock>
+            Não há imagens desse item
+        </ng-template>
     </div>
-    <ng-template #elseBlock>
-        Não há imagens desse item
-    </ng-template>
+    <div class="product-description-container">
+        <div class="title-container">
+            Color
+            <strong>Item Type / Name</strong>
+        </div>
+
+        <div class="price-container">
+            <strong>$19.99</strong>
+            <span>$39.99</span>
+        </div>
+
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+            standard
+            dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+            specimen
+            book.
+        </p>
+        <div class="size-container">
+            <small>Size:</small>
+            <select (change)="selectedSize=$event.target.value" id="product-sizes" name="size">
+                <option *ngFor="let size of selectedProduct.avaiableSizes" value={{size}}>
+                    {{size}}
+                </option>
+            </select>
+        </div>
+
+        <button (click)="addItemToCart()">ADD TO CART</button>
+
+    </div>
+
 </div>
-<div class="product-description-container">
-    <div class="title-container">
-        Color
-        <strong>Item Type / Name</strong>
-    </div>
-
-    <div class="price-container">
-        <strong>$19.99</strong>
-        <span>$39.99</span>
-    </div>
-
-    <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-        dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-        book.
-    </p>
-    <div class="size-container">
-        <small>Size:</small>
-        <select id="product-sizes" name="size">
-            <option *ngFor="let size of selectedProduct.avaiableSizes" value={{size}}>
-             {{size}}
-            </option>
-
-        </select>
-    </div>
-
-    <button (click)="addItemToCart()">ADD TO CART</button>
-</div>
-
 
 
 
