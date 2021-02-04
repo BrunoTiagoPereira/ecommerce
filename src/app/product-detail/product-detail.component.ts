@@ -29,7 +29,7 @@ export class ProductDetailComponent implements OnInit {
        this.database.
        getProducts()
        .find(product=>product.id===parseInt(params.get('id')));
-      this.selectedImageId=1;
+      this.selectedImageId=0;
 
     })
   }
@@ -38,17 +38,13 @@ export class ProductDetailComponent implements OnInit {
   //true=foward|false=back 
   onImageChange(side: boolean){
 
-     console.log(side);
-     console.log(this.selectedProduct.images.length);
-     console.log(this.selectedProduct.images.length-1>this.selectedImageId+1);
-    if(side&&this.selectedProduct.images.length-1>this.selectedImageId+1){
+    
+    if(side&&this.selectedProduct.images.length-1>=this.selectedImageId+1){
       this.selectedImageId+=1;
 
     }
     else if(!side&&this.selectedImageId>0){
       this.selectedImageId-=1;
-      
-      
     }
   }
 

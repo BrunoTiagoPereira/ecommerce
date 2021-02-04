@@ -24,31 +24,31 @@ export class DatabaseService {
       let products:ProductsProps[] = [
       { id:1, category:"Shoes", description:"Description", title:"Product1", images:[
         this.imageTemplate
-      ]},
+      ],avaiableSizes:["Large","Medium","Short"]},
       { id:2, category:"Jackets", description:"Description", title:"Product2", images:[
-        "",this.imageTemplate,this.imageTemplate, 
-      ]},
+       this.imageTemplate
+      ], avaiableSizes:["Large","Medium","Short"]},
       { id:3, category:"Jackets", description:"Description", title:"Product3", images:[
         this.imageTemplate
-      ]},
+      ], avaiableSizes:["Large","Medium","Short"]},
       { id:4, category:"Jackets", description:"Description", title:"Product4", images:[
         this.imageTemplate
-      ]},
+      ], avaiableSizes:["Large","Medium","Short"]},
       { id:5, category:"Jackets", description:"Description", title:"Product5", images:[
         this.imageTemplate
-      ]},
+      ], avaiableSizes:["Large","Medium","Short"]},
       { id:6, category:"Shoes", description:"Description", title:"Product6", images:[
         this.imageTemplate
-      ]},
+      ], avaiableSizes:["Large","Medium","Short"]},
       { id:7, category:"Shoes", description:"Description", title:"Product7", images:[
         this.imageTemplate
-      ]},
+      ], avaiableSizes:["Large","Medium","Short"]},
       { id:8, category:"Shoes", description:"Description", title:"Product8", images:[
         this.imageTemplate
-      ]},
+      ], avaiableSizes:["Large","Medium","Short"]},
       { id:9, category:"Shoes", description:"Description", title:"Product9", images:[
         this.imageTemplate
-      ]},
+      ], avaiableSizes:["Large","Medium","Short"]},
 
     ];
     return products;
