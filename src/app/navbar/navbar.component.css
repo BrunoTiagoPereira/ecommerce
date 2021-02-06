@@ -54,6 +54,30 @@ a.active {
   transition: transform 0.2s;
 }
 
+.navbar-container .navbar-links ul a:last-child {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+}
+
+.navbar-container .navbar-links ul a:last-child label {
+  font-size: 0.8rem;
+
+  margin-top: -30px;
+
+  background-color: rgb(200, 200, 200);
+  color: black;
+
+  width: 20px;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .navbar-container .navbar-links ul a:hover {
   transform: scale(1.2);
   color: white;
@@ -128,5 +152,8 @@ a.active {
     margin: 0px;
     font-size: 1.3rem;
     transition: all 0.2s;
+  }
+  .navbar-container .navbar-links ul a:last-child {
+    margin-left: 0px;
   }
 }

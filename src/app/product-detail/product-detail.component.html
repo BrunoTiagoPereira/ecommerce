@@ -5,15 +5,11 @@
     <div class="product-detail-container">
         <div *ngIf="selectedProduct.images.length>0; else elseBlock" class="product-detail-content">
             <div class="choose-image-container">
-                <div class="choose-image-buttons">
-                    <label (click)="onImageChange(false)">
-                      <fa-icon [icon]="arrowLeft"></fa-icon>
-                  </label>
+                <div (click)="onImageChange(false)" class="choose-image-buttons">
+                    <fa-icon [icon]="arrowLeft"></fa-icon>
                 </div>
-                <div class="choose-image-buttons">
-                    <label (click)="onImageChange(true)">
-                        <fa-icon [icon]="arrowRight"></fa-icon>
-                    </label>
+                <div (click)="onImageChange(true)" class="choose-image-buttons">
+                    <fa-icon [icon]="arrowRight"></fa-icon>
                 </div>
             
             </div>

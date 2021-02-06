@@ -16,9 +16,15 @@
                 <a routerLink="/gallery" routerLinkActive="active">Gallery</a>
                 <a routerLink="/shopping" routerLinkActive="active">Shop</a>
                 <a routerLink="/cart" routerLinkActive="active">
-                    <fa-icon [icon]="CartIcon"></fa-icon>
+                    <fa-icon class="cart-icon" [icon]="CartIcon">
+                        
+                    </fa-icon>
+                    <div></div>
+                    <label *ngIf="totalItemsInCart>0">{{totalItemsInCart}}</label>
+                    
                 </a>
             </ul>
+            
         </div>
         
         <label class="menu-icon" for="menu-btn">

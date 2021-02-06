@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import {ProductsProps,CategoriesProps} from '../../interfaces/interfaces';
 
 
@@ -9,6 +9,13 @@ import {ProductsProps,CategoriesProps} from '../../interfaces/interfaces';
 export class DatabaseService {
 
    cart: ProductsProps[] = [];
+
+   totalItemsInCart=0;
+
+
+   onAddCartItem: EventEmitter<number> = new EventEmitter();
+
+   
     imageTemplate:string = "../../assets/productTemplate.svg";
   constructor() { 
   
@@ -20,6 +27,10 @@ export class DatabaseService {
     if(product.selectedSize==null)return;
     
     this.cart.push(product);
+
+    this.totalItemsInCart+=1;
+    this.onAddCartItem.emit(this.totalItemsInCart);
+
     console.log(this.cart);
   }
 
